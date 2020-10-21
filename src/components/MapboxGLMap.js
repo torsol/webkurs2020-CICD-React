@@ -18,8 +18,8 @@ const MapboxGLMap = () => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
         style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
-        center: [6.1468505859375,
-          62.47680101352278],
+        center: [7.020263671875,
+          62.560451883610256],
         zoom: 8
       });
 
