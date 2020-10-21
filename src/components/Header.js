@@ -1,7 +1,8 @@
 import React from 'react'
+import vake from './vake.png';
 
 const styles = {
-    height: '60px',
+    height: '500px',
     width: '100vw',
     padding: '10px',
     textAlign: 'center',
@@ -11,7 +12,8 @@ const styles = {
 const Header = () => {
     return (
         <div style={styles}>
-            <header>KART? KART</header>
+            <img src={vake} alt="Logo" />
+            <header>AIS-signaler hentet fra VAKE og visualisert i mapbox (stor fil tar lang tid)</header>
         </div>
     )
 }

@@ -18,11 +18,29 @@ const MapboxGLMap = () => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
         style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
-        center: [10.408773,63.422091],
-        zoom: 10
+        center: [6.1468505859375,
+          62.47680101352278],
+        zoom: 8
       });
 
       map.on("load", () => {
+
+        map.addSource('ships', {
+          type: 'geojson',
+          data: 'https://raw.githack.com/torsol/webkurs2020-CICD-React/main/cleaned_output_100_100.geojson'
+        });
+
+        map.addLayer({
+          'id': 'ships',
+          'type': 'fill',
+          'source': 'ships',
+          'layout': {},
+          'paint': {
+          'fill-color': '#088',
+          'fill-opacity': 0.8
+          }
+          });
+
         setMap(map);
         map.resize();
       });
